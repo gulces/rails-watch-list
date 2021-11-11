@@ -1,1 +1,9 @@
 <h1>Lists Show</h1>
+<h4><%= @list.name %></h4>
+<% @list.movies.each do |movie| %>
+  <%= image_tag movie.poster_url, alt: "Le Wagon", width: 200 %>
+  <p><%= movie.title %></p>
+  <p><%= movie.overview %></p>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Do you really want to?' } %>
+<% end %>
