@@ -1,5 +1,16 @@
-<h1>Lists New</h1>
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="banner" id="create-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.timesofisrael.com/jewishchronicle/uploads/2020/09/Film.jpg);">
+  <div class="container">
+    <h1><strong>Create</strong> a <strong>new list</strong></h1>
+    <p>Save your favourites to watch later.</p>
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Your New List</h1>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <div class="btn btn-ghost"><%= f.button :submit %></div>
+  <% end %>
+</div>
